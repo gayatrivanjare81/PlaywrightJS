@@ -15,9 +15,15 @@ jobs:
       with:
         node-version: 18
 
-    - run: npm install
-    - run: npx playwright install
+    - name: Install dependencies
+  run: cd PlaywrightJS && npm install
 
+- name: Install Playwright browsers
+  run: cd PlaywrightJS && npx playwright install
+
+- name: Run tests
+  run: cd PlaywrightJS && npx playwright test
+  
     # ✅ CI part
     - name: Run tests
       run: npx playwright test
