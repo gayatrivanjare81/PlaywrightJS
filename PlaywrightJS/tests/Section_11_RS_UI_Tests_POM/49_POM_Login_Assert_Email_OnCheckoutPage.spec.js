@@ -1,5 +1,3 @@
-/**  
-
 
 const {test,expect} = require('@playwright/test');
 //const { default: CommonUtils } = require('../../utils/CommonUtils');
@@ -55,9 +53,9 @@ test('Section_11_RS_UI_Tests - RahulShettyAcademy Client App Login - POM_Login_A
     //await page.pause();
 });
 
-test.afterEach(async() => {
+/* test.afterEach(async() => {
     await new CommonUtils().waitForSomeTime(5);
 });//afterEach
-
+*/
 
 
