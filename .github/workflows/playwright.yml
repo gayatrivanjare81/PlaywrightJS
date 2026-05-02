@@ -9,29 +9,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 18
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
 
-    - name: Install dependencies
-  run: cd PlaywrightJS && npm install
+      - name: Install dependencies
+        run: cd PlaywrightJS && npm install
 
-- name: Install Playwright browsers
-  run: cd PlaywrightJS && npx playwright install
+      - name: Install Playwright browsers
+        run: cd PlaywrightJS && npx playwright install
 
-- name: Run tests
-  run: cd PlaywrightJS && npx playwright test
-  
-    # ✅ CI part
-    - name: Run tests
-      run: npx playwright test
+      - name: Run tests
+        run: cd PlaywrightJS && npx playwright test
 
-    # ✅ CD part
-    - name: Upload report
-      uses: actions/upload-artifact@v4
-      with:
-        name: playwright-report
-        path: playwright-report/
-        
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: PlaywrightJS/playwright-report/
