@@ -19,7 +19,7 @@ jobs:
         run: cd PlaywrightJS && npm install
 
       - name: Install Playwright browsers
-        run: cd PlaywrightJS && npx playwright install
+        run: cd PlaywrightJS && npx playwright install --with-deps
 
       - name: Run tests
         run: cd PlaywrightJS && npx playwright test
